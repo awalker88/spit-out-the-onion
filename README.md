@@ -1,4 +1,4 @@
 # spit-out-the-onion
-Machine learning model to determine whether a news headline is actually from The Onion
+Implements a DistilBERT model to determine whether a news headline came from the subreddit r/TheOnion or r/NotTheOnion
 
-data from https://github.com/lukefeilberg/onion
+Data pull originally sourced from https://github.com/lukefeilberg/onion
