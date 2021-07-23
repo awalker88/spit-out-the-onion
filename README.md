@@ -1,6 +1,7 @@
 # spit-out-the-onion
-Implements a DistilBERT model to determine whether a news headline came from the subreddit r/TheOnion or r/NotTheOnion. With a balanced dataset, the downstream logistic regression model acheives 87% accuracy on the train set and 85% accuracy on the test set.
+With the current state of the world, I'm sure everyone's second-guessed whether a news headline was real or satire. To save people the trouble of having to actually _read_ the article, I built a classifier model that takes in your headline and gives the percentage chance that it came from _The Onion_, the largest satirical news network on the web. The heart of the process comes in the form of a pre-trained [DistilBERT](https://arxiv.org/abs/1910.01108) model, which eats a tokenized version of your headline and kindly spits out a lower-dimensional embedding vector that represents it. Then, I use a logistic regression model that was trained on top of those embeddings to give a probability that it's from _The Onion_. To train the logistic regression, I used 30k headlines gathered from two subreddits, [r/TheOnion](https://www.reddit.com/r/TheOnion/) and [r/NotTheOnion](https://www.reddit.com/r/nottheonion/). With a balanced dataset, the downstream logistic regression model achieves 87% accuracy on the training set and 85% accuracy on the test set.
 
-Link to main model walkthrough: https://github.com/awalker88/spit-out-the-onion/blob/master/onion_or_not.ipynb
+This project is just for fun, but if you'd like more details, check out [the notebook](https://github.com/awalker88/spit-out-the-onion/blob/master/onion_or_not.ipynb) that walks through my process 🤗.
 
+![img](https://github.com/awalker88/spit-out-the-onion/blob/master/example.png)
 Data pull originally sourced from https://github.com/lukefeilberg/onion
